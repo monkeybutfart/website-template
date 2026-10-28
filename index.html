@@ -20,18 +20,55 @@
     </header>
 
     <!-- Image Section -->
+    
+    <div class="slideshow">
+        <img class="slide" src="pics/maunga_club_cabin.jpg"
+            alt="Maunga Club photo">
+
+        <img class="slide" src="pics/mountain_view_1.jpg"
+            alt="Mountain View photo">
+
+        <img class="slide" src="pics/pukeko/chalet_exterior.jpg"
+            alt="Pūkeko photo">
+            
+
+        <img class="slide" src="pics/kakapo/cabin_exterior.jpg"
+            alt="Kākāpo photo">
+
+
+        <button class="prev" onclick="changeSlide(-1)">❮</button>
+        <button class="next" onclick="changeSlide(1)">❯</button>
+    </div>
+        
     <div class="home">
-        <img src="" alt="">
-        <p>Welcome to the TreeHousePro Web page. We bulid amazing treehouses for all ages,<p>         
-        <p>Even your grandma can!!!</p>
+        <h3>Welcome to the Maunga Club Web page. We allow you to book our chalets online. You can also view the features of each chalet and contact us through the contact form below.</h4>
+         
+                <li><h4>Only Club members can access the chalets</h4></li>
+                <li><h4>All chalet bookings must be from Friday to Sunday.</h4></li>
+                <li><h4>Chalets offer shared accommodation for between 6 and 40 people per chalet.</h4></li>
+                <li><h4>All three chalets are on the mountain, so you can ski to and from the chalets.</h4></li>
+                <li><h4>The mountain gives 550 hectares of skiing/snowboarding area, and the longest ski/snowboard season in New Zealand.</h4></li>
+           
+        <h4>We look forward to seeing you at the Maunga Club!</h4>
     </div>
 
 
-    <!-- Footer Section -->
+
+    
+
+
+
+
+
+
+
+
+
+     <!-- Footer Section -->
     <footer>
         <p>Telephone: 029 512 3656  |  Email: maungaclub@maungaclub.maungaclub</p>
         <h1>Contact Form</h1>
-    <form action="#" method="post">
+    <form id="contactForm" action="#" method="post">
     <label for="first-name">First Name:</label>
     <input type="text" id="first-name" name="first-name" required><br><br>
     <label for="last-name">Last Name:</label>
@@ -40,9 +77,73 @@
     <input type="email" id="email" name="email" required><br><br>
     <label for="phone">Phone number:</label>
     <input type="text" id="phone" name="phone" required><br><br>
-    <label for="phone">City:</label>
-    <input type="text" id="poop" name="moneky" required><br><br>
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city" required><br><br>
     <input type="submit" value="Submit">
     </footer>
+
+
+
+
+
+
+        <script>
+        let currentSlide = 0;
+
+        const slides = document.querySelectorAll(".slideshow .slide");
+
+        function showSlide(number) {
+            if (slides.length === 0) return;
+
+            currentSlide = (number + slides.length) % slides.length;
+
+            slides.forEach(function(slide) {
+                slide.style.display = "none";
+            });
+
+            slides[currentSlide].style.display = "block";
+        }
+
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        // Show the first image
+        showSlide(0);
+
+        // Automatically change image every 4 seconds
+        setInterval(function() {
+            showSlide(currentSlide + 1);
+        }, 4000);
+    </script>
+
+
+    <script>
+    const contactForm = document.getElementById("contactForm");
+
+    contactForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        alert("Thank you! Your contact form has been submitted.");
+
+        contactForm.reset();
+    });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>

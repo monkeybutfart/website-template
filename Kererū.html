@@ -18,13 +18,71 @@
             <img src="pics/Maunga_Club_white.png" alt="Maunga_Club_Logo">
     </header>
     
+  
+    
+    
+    
+    <div class="slideshow">
+    <img class="slide" src="pics/kereru/adult_bedroom.jpg"
+         alt="Kererū photo">
+
+    <img class="slide" src="pics/kereru/cabin_exterior.jpg"
+         alt="Kererū photo">
+
+    <img class="slide" src="pics/kereru/kids_bedroom.jpg"
+         alt="Kererū photo">
+
+    <img class="slide" src="pics/kereru/kitchen.jpg"
+         alt="Kererū photo">
+
+
+    <button class="prev" onclick="changeSlide(-1)">❮</button>
+    <button class="next" onclick="changeSlide(1)">❯</button>
+    </div>
+    
+    <div class="features">
+        <h1>Kererū Features</h1>
+    </div>
 
 
 
+
+
+    <div class="content">
+        
+        
+        
+            <ul>
+                <li><h3>Great option for a family</h3></li>
+                <li><h3>2 bedrooms</h3></li>
+                <li><h3>Perfect for families with 2-4 children</h3></li>
+                <li><h3>Separate living area</h3></li>
+                <li><h3>Maximum Children: 4</h3></li>
+                <li><h3>Maximum Adults: 2</h3></li>
+            </ul>
+        
+    </div>
+
+
+ 
+   
+
+
+
+        
+
+
+      
+    
+   
+
+    
+
+    <!-- Footer Section -->
     <footer>
-    <p>Telephone: 029 512 3656  |  Email: maungaclub@maungaclub.maungaclub</p>
-    <h1>Contact Form</h1>
-    <form action="#" method="post">
+        <p>Telephone: 029 512 3656  |  Email: maungaclub@maungaclub.maungaclub</p>
+        <h1>Contact Form</h1>
+    <form id ="contactForm" action="#" method="post">
     <label for="first-name">First Name:</label>
     <input type="text" id="first-name" name="first-name" required><br><br>
     <label for="last-name">Last Name:</label>
@@ -33,11 +91,62 @@
     <input type="email" id="email" name="email" required><br><br>
     <label for="phone">Phone number:</label>
     <input type="text" id="phone" name="phone" required><br><br>
-    <label for="phone">City:</label>
-    <input type="text" id="poop" name="moneky" required><br><br>
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city" required><br><br>
     <input type="submit" value="Submit">
     </form>
     </footer>
 
+
+
+
+
+
+
+
+
+
+    <script>
+        let currentSlide = 0;
+
+        const slides = document.querySelectorAll(".slideshow .slide");
+
+        function showSlide(number) {
+            if (slides.length === 0) return;
+
+            currentSlide = (number + slides.length) % slides.length;
+
+            slides.forEach(function(slide) {
+                slide.style.display = "none";
+            });
+
+            slides[currentSlide].style.display = "block";
+        }
+
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        // Show the first image
+        showSlide(0);
+
+        // Automatically change image every 4 seconds
+        setInterval(function() {
+            showSlide(currentSlide + 1);
+        }, 4000);
+    </script>
+
+
+    <script>
+    const contactForm = document.getElementById("contactForm");
+
+    contactForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        alert("Thank you! Your contact form has been submitted.");
+
+        contactForm.reset();
+    });
+    </script>
 </body>
 </html>

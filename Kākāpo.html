@@ -41,7 +41,7 @@
     </div>
     
     <div class="features">
-        <h1>Features</h1>
+        <h1>Kākāpo Features</h1>
     </div>
 
 
@@ -59,7 +59,7 @@
                 <li><h3>Maximum Children: 30</h3></li>
                 <li><h3>Maximum Adults: 10</h3></li>
             </ul>
-        </div>
+        
     </div>
 
 
@@ -81,7 +81,7 @@
     <footer>
         <p>Telephone: 029 512 3656  |  Email: maungaclub@maungaclub.maungaclub</p>
         <h1>Contact Form</h1>
-    <form action="#" method="post">
+    <form id ="contactForm" action="#" method="post">
     <label for="first-name">First Name:</label>
     <input type="text" id="first-name" name="first-name" required><br><br>
     <label for="last-name">Last Name:</label>
@@ -90,8 +90,8 @@
     <input type="email" id="email" name="email" required><br><br>
     <label for="phone">Phone number:</label>
     <input type="text" id="phone" name="phone" required><br><br>
-    <label for="phone">City:</label>
-    <input type="text" id="poop" name="moneky" required><br><br>
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city" required><br><br>
     <input type="submit" value="Submit">
     </form>
     </footer>
@@ -133,6 +133,19 @@
         setInterval(function() {
             showSlide(currentSlide + 1);
         }, 4000);
+    </script>
+
+
+    <script>
+    const contactForm = document.getElementById("contactForm");
+
+    contactForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        alert("Thank you! Your contact form has been submitted.");
+
+        contactForm.reset();
+    });
     </script>
 </body>
 </html>
