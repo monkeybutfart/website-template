@@ -21,7 +21,7 @@
   
     
     
-    
+    //images for the slideshow 
     <div class="slideshow">
     <img class="slide" src="pics/pukeko/adult_bedroom.jpg"
          alt="Pūkeko photo">
@@ -39,16 +39,13 @@
     <button class="prev" onclick="changeSlide(-1)">❮</button>
     <button class="next" onclick="changeSlide(1)">❯</button>
     </div>
-    
+    //the features of the pukeko chalet
     <div class="features">
         <h1>Pūkeko Features</h1>
     </div>
 
 
-
-
-
-    <div class="content">
+     <div class="content">
         
         
         
@@ -79,7 +76,7 @@
 
     <!-- Footer Section -->
     <footer>
-        <p>Telephone: 029 512 3656  |  Email: maungaclub@maungaclub.maungaclub</p>
+        <p><strong> 029 512 3656  |  Email: maungaclub@maungaclub.maungaclub</strong></p>
         <h1>Contact Form</h1>
     <form id ="contactForm" action="#" method="post">
     <label for="first-name">First Name:</label>
@@ -104,7 +101,7 @@
 
 
 
-
+    //slideshow to show the images 
     <script>
         let currentSlide = 0;
 
@@ -129,13 +126,13 @@
         // Show the first image
         showSlide(0);
 
-        // Automatically change image every 4 seconds
+        // Automatically change image every 6 seconds
         setInterval(function() {
             showSlide(currentSlide + 1);
-        }, 4000);
+        }, 6000);
     </script>
 
-
+    //when an email is sent it will make a pop up
     <script>
     const contactForm = document.getElementById("contactForm");
 

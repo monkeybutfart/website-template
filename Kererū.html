@@ -39,7 +39,7 @@
     <button class="prev" onclick="changeSlide(-1)">❮</button>
     <button class="next" onclick="changeSlide(1)">❯</button>
     </div>
-    
+    //info for the kereru chalet
     <div class="features">
         <h1>Kererū Features</h1>
     </div>
@@ -80,7 +80,7 @@
 
     <!-- Footer Section -->
     <footer>
-        <p>Telephone: 029 512 3656  |  Email: maungaclub@maungaclub.maungaclub</p>
+        <p><strong> 029 512 3656  |  Email: maungaclub@maungaclub.maungaclub</strong></p>
         <h1>Contact Form</h1>
     <form id ="contactForm" action="#" method="post">
     <label for="first-name">First Name:</label>
@@ -105,7 +105,7 @@
 
 
 
-
+    //slideshow to make the silde be a slide show 
     <script>
         let currentSlide = 0;
 
@@ -130,13 +130,13 @@
         // Show the first image
         showSlide(0);
 
-        // Automatically change image every 4 seconds
+        // Automatically change image every 6 seconds
         setInterval(function() {
             showSlide(currentSlide + 1);
-        }, 4000);
+        }, 6000);
     </script>
 
-
+    //when an email is sent it will make a pop up
     <script>
     const contactForm = document.getElementById("contactForm");
 

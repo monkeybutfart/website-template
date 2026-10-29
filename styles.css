@@ -9,7 +9,7 @@ body {
 }
 /* Header Styling */
 header {
-background-color: rgb(102, 190, 248);
+background-color: rgb(17, 255, 238);
 color: rgb(0, 0, 0);
 padding: 20px;
 }
@@ -41,7 +41,7 @@ border-radius: 10px;
 
 /* Footer Styling */
 footer {
-    background-color: rgb(102, 190, 248);
+    background-color: rgb(17, 255, 238);
     color: rgb(0, 0, 0);
     text-align: center;
     padding: 15px;
